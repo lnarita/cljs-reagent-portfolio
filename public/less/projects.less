@@ -1,0 +1,138 @@
+// main: main.less
+
+.work {
+  background: @background-color;
+  padding: 1em;
+
+  .projects,
+  .experiences {
+    padding: .5em;
+    margin: 0 auto;
+  }
+}
+
+.grid {
+  -moz-column-count: 1;
+  -webkit-column-count: 1;
+  column-count: 1;
+  position: relative;
+  margin: 0 auto;
+  width: 250px;
+}
+
+.grid-item {
+  background-color: transparent;
+  padding-bottom: 1em;
+  width: 100%;
+
+  input[type=checkbox] {
+    position: absolute;
+    display: none;
+    cursor: pointer;
+    left: -100%;
+    top: -100%;
+  }
+
+  .overview {
+    color: @foreground-color;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    -moz-transition: opacity 0.5s ease-out;
+    -webkit-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+
+    &:hover {
+      opacity: .5;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .fork {
+      color: @green;
+    }
+
+    .source {
+      color: @cyan
+    }
+  }
+
+  .description {
+    opacity: 0;
+    position: fixed;
+    margin: 0;
+    width: 0;
+    height: 0;
+    z-index: 3;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-transition: opacity 1s ease-in-out, -webkit-transform 1s;
+    transition: opacity 1s ease-in-out, transform 1s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -webkit-transform: translate3d(0, 30px, 0);
+    transform: translate3d(0, 30px, 0);
+    overflow: auto;
+
+    &:after {
+      content: 'Click anywhere to close';
+      font-style: italic;
+      opacity: .5;
+    }
+
+    p {
+      width: 90%;
+    }
+
+    .details {
+      svg ~ span {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  input[type=checkbox]:checked ~ .description {
+    opacity: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    background: @background-color;
+    color: @foreground-color;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.icon {
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: text-top;
+  margin: 0 .5em;
+}
+
+.star-icon {
+  color: @cyan;
+}
+
+@media screen and (min-width: 37em) {
+  .grid {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    width: 550px;
+  }
+}
+
+@media screen and (min-width: 55em) {
+  .grid {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+    width: 768px;
+  }
+}

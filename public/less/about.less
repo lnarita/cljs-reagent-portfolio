@@ -1,0 +1,129 @@
+// main: main.less
+
+#about {
+  background-color: @background-color;
+  background-size: cover;
+  padding: 4% 8% 8% 4%;
+  height: 100%;
+}
+
+.about {
+  max-width: 700px;
+  margin: 0 auto;
+  background: linear-gradient(to top right, @white 0%, @white 50%, @accent-color 50%, @accent-color 100%) !important;
+  color: @foreground-color;
+  box-shadow: 15px 15px 0 fade(@accent-color-shade, 85%);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  mix-blend-mode: exclusion;
+
+  .about-pic {
+    min-height: 300px;
+    padding: .5em;
+    -webkit-clip-path: polygon(70% 0, 100% 70%, 30% 100%, 0 30%);
+    clip-path: polygon(70% 0, 100% 70%, 30% 100%, 0 30%);
+
+    .about-pic__wrapper {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    .about-pic__image {
+      width: 100%;
+      height: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .about-pic__image {
+      position: relative;
+    }
+  }
+
+  .about-text {
+    font-family: @body-font !important;
+    mix-blend-mode: exclusion;
+
+    q {
+      quotes: "“" "”" "‘" "’";
+    }
+
+    q:before {
+      margin-right: 0.8rem;
+      font-size: 2rem;
+    }
+
+    q:after {
+      font-size: 2rem;
+      position: relative;
+      top: 0.8em;
+    }
+
+    blockquote q {
+      font-style: italic;
+      letter-spacing: 0.1rem;
+    }
+
+    blockquote q span {
+      will-change: opacity, filter;
+      opacity: 0;
+      -webkit-filter: blur(0px);
+      filter: blur(0px);
+    }
+
+    cite {
+      position: relative;
+      display: block;
+      text-align: right;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      font-style: normal;
+
+      a {
+        color: @foreground-color;
+      }
+    }
+
+    .name,
+    .surname {
+      font-size: 300%;
+      font-weight: normal;
+      mix-blend-mode: exclusion;
+    }
+
+    .name::first-letter,
+    .surname::first-letter {
+      font-weight: bold;
+    }
+
+    .name {
+      margin: auto auto auto 5%;
+    }
+
+    .surname {
+      margin: auto auto auto 15%;
+    }
+
+    p {
+      padding: 0 1em 1em 1em;
+    }
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .about .about-pic {
+    padding: 0;
+    -webkit-clip-path: polygon(25% 0%, 100% 0, 100% 100%, 25% 100%, 0 62.5%);
+    clip-path: polygon(25% 0%, 100% 0, 100% 100%, 25% 100%, 0 62.5%);
+  }
+
+  .about .about-text cite a {
+    color: @red;
+  }
+}

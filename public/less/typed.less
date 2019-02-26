@@ -1,0 +1,21 @@
+// main: main.less
+
+.typed {
+    display: inline-block;
+    transition: color 0.5s ease-out;
+    -webkit-transition: color 0.5s ease-out;
+    -mox-transition: color 0.5s ease-out;
+    -o-transition: color 0.5s ease-out;
+
+    &:before {
+        content: '› ';
+        color: @foreground-color;
+    }
+}
+
+.typed.semi {
+    &:after {
+        content: ';';
+        color: @foreground-color;
+    }
+}

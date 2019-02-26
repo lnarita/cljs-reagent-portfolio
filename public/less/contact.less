@@ -1,0 +1,55 @@
+@full-text-width: 80%;
+
+.contact {
+  max-width: 700px;
+  width: 100%;
+  margin: 2% auto;
+  padding: 5%;
+}
+
+.contact label {
+  position: relative;
+  display: block;
+  margin-bottom: .5em;
+  color: @foreground-color;
+}
+
+.contact input,
+.contact textarea,
+.contact button {
+  width: 35%;
+  position: relative;
+  display: block;
+  background-color: inherit;
+  margin-bottom: 1em;
+  border: 2px solid @foreground-color;
+  padding: .5em;
+  color: @foreground-color;
+}
+
+.contact #message,
+.contact #subject {
+  width: @full-text-width;
+}
+
+.contact #message {
+  resize: vertical;
+}
+
+.contact button {
+  box-shadow: 5px 5px 0 fade(@accent-color-shade, 85%);
+  width: 20%;
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: none;
+    background-color: @accent-color-shade;
+    border-color: @accent-color-shade;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+}
